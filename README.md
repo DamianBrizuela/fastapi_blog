@@ -1,17 +1,19 @@
-##Fast-Api
+# Ejemplos de FastAPI
+#### FastAPI es un framework de Python diseñado para crear APIs de manera rápida, sencilla y con alto rendimiento. Utiliza las anotaciones de tipo de Python para validar datos automáticamente y generar documentación interactiva sin configuración adicional. Su arquitectura se basa en herramientas modernas como Starlette y Pydantic, lo que facilita el desarrollo limpio y estructurado.
 
-#Creamos un entorno para poder trabajar comodos en sin afectar el resto del equipo con librerias
+#### Fue creado por Sebastián Ramírez. Se usa para construir servicios web, microservicios, integraciones con bases de datos y endpoints para proyectos de machine learning. Es especialmente útil cuando se requiere rapidez en el desarrollo, buena validación de datos y un servidor eficiente.
 
-'python -m venv .fast_api_env
+# 
+#### Instalar las librerias minimas necesarias para los ejemplos:
 
-#Luego accedemos al entorno virtual
+1. Creamos un entorno virtual para correr los ejemplos.
 
-'source .fast_api_env/bin/activate
+``` python -m venv .fast_api_env ```
 
-#Si necesito salir del entorno
+2. Luego accedemos al entorno virtual
 
-'deactivate
+``` source .fast_api_env/bin/activate ```
 
-#Instalar en el entorno virtual los requerimientos
+3. Instalar en el entorno virtual los requerimientos
 
-'pip install -r requeriments.txt
+``` pip install -r requeriments.txt ```
