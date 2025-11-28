@@ -1,8 +1,8 @@
 """
     Author:     Damian Brizuela
-    version:    1.0.0
-    Date:       27/11/2025
-    Comments:   Basic module for using FastApi - step 1
+    version:    1.1.0
+    Date:       28/11/2025
+    Comments:   Basic module for using FastApi routers - step 3
 """
 
 import uvicorn
@@ -18,6 +18,7 @@ def root():
     return {"message": "ok-fastapi"}
 
 def init_server():
+
     uvicorn.run("main:app", host=HOST, port=PORT, reload=True)
     print("FastAPI Server running...")
 

@@ -7,27 +7,13 @@
 
 import uvicorn
 from fastapi import FastAPI
+from step_3.routers import first_router
 
 HOST = "localhost"
 PORT = 8300
 
 app= FastAPI(title= "FastApi")
-
-@app.get("/")
-def root():
-    return {"message": "ok-fastapi"}
-
-@app.get("/other-endpoint")
-def root_a():
-    return {
-        "message": "ok-fastapi",
-        "content": "other content"
-    }
-
-@app.post("/post-endpoint")
-def root_post():
-    return {"message": "POST endpoint"}
-
+app.include_router(first_router)
 
 def init_server():
 
