@@ -16,7 +16,7 @@ app= FastAPI(title= "FastApi")
 
 # incluyo en FastAPI un router
 # Me permitira ordenar mis endpoints
-app.include_router(public_router_tag)
+app.include_router(calculator_router)
 
 def init_server():
     print(f"FastAPI Server running on url: {HOST}:{PORT}   ...\n")

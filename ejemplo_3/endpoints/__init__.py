@@ -1,5 +1,5 @@
-from .public_router import public_router_tag
+from .calc_router import calculator_router
 
 __all__ = [
-    "public_router_tag"
+    "calculator_router"
 ]
