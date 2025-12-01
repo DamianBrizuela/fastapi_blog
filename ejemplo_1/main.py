@@ -31,6 +31,7 @@ def get_status():
 
 def init_server():
     print(f"FastAPI Server running on url: {HOST}:{PORT}   ...\n")
+    print("ejemplo 1 -» basic FastAPI \n")
     uvicorn.run("main:app", host=HOST, port=PORT, reload=True)
 
 if __name__ == "__main__":
