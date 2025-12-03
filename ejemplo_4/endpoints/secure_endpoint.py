@@ -7,6 +7,7 @@
 
 from fastapi import APIRouter, HTTPException
 from models_request import data
+from secure_apikey.verify_apikey import validar_api_key
 
 secure_router = APIRouter(prefix= '/calc', tags=["Secure endpoints"])
 # defino un prefijo 'public' en la url
