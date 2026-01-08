@@ -8,7 +8,7 @@
 import uvicorn
 from fastapi import FastAPI
 from endpoints.public_router import public_router_tag
-from middleware import CustomHeaderMiddleware, time_mesurement, BaseHTTPMiddleware
+from middleware import time_mesurement, BaseHTTPMiddleware
 
 HOST = "localhost"
 PORT = 8300
@@ -16,12 +16,13 @@ RECOMMENDS = """
     - Accede a http://localhost:8300/public/ para probar el endpoint
     - Si accedes a otra url, podras ver los datos propocionados, ya que los middleware acceden a los
         datos de la peticion y respuesta.
-    
+    - Prueba acceder a alguna ruta definida que contenga /manteinance/ o /private/ para ver como los 
+        middlewares bloquean el acceso con un mensaje particular
+
 """
 
 app= FastAPI(title= "FastApi")
 app.add_middleware(BaseHTTPMiddleware, dispatch= time_mesurement)
-app.add_middleware(CustomHeaderMiddleware, comments="Esto es solo un comentario por ahora!")
 
 app.include_router(public_router_tag)
 
