@@ -20,11 +20,8 @@ class CustomHeaderMiddleware(BaseHTTPMiddleware):
         request_url = request.url
 
         response = await call_next(request)
+        # adiciono una cabecera personalizada
         response.headers["X-Custom-Header"] = "¡Hola desde el middleware de clase!"
-
-        if ["private", "limit"] in request_url:
-            raise HTTPException(status_code=404, detail="URL no permitida")
-            return
 
         print(f"después de la respuesta \n IP cliente: {client_ip} \n URL solicitada: {request_url} \n Headers:\n {self._headers_to_str(headers)}\n")
         return response

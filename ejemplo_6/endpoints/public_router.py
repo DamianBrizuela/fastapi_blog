@@ -21,3 +21,8 @@ def public_welcome():
 @public_router_tag.get("/status")
 def public_status():
     return {"message": "status endpoint from public router - ok"}
+
+
+@public_router_tag.get("/avoid")
+def public_welcome():
+    return {"message": "Estas viendo este mensaje, y ademas no tienes medicion de tiempo de la petición!!!!!"}

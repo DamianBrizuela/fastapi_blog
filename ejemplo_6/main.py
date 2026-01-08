@@ -15,7 +15,11 @@ PORT = 8300
 RECOMMENDS = """
     - Accede a http://localhost:8300/public/ para probar el endpoint
     - Revisa el ejemplo 5 antes!!.
-    
+    - Para verificar si se agregan cabeceras en la respuesta, una forma simple de verificarlo es 
+        acceder a las herramientas de desarrollo del navegador (generalmente con F12), y dentro
+        de 'Network' seleccionar la petición realizada y revisar las cabeceras de la respuesta 
+        (Response Headers).
+    - Accede a http://localhost:8300/public/avoid para ver como saltear un middleware
     
 """
 

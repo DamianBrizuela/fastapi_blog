@@ -26,11 +26,20 @@ async def time_mesurement(request: Request, call_next):
             status_code=503,
             content={"message": "El servicio solicitado está temporalmente fuera de servicio por mantenimiento."}
         )
-
+    
     start_time = time.perf_counter()
     response = await call_next(request)
-    process_time = time.perf_counter() - start_time
 
-    response.headers["X-Process-Time"] = str(process_time)
-    print(f"Procesando la peticion {request.url} en: {process_time} segundos")
+    path = request.url.path
+    if "avoid" in path:
+        # si quisiera evitar adicionar la cabecera de medicion de tiempo "X-Process-Time"
+        return response
+    
+    else:
+        process_time = time.perf_counter() - start_time
+
+        # aca tambien se adiciona una cabecera personalizada
+        response.headers["X-Process-Time"] = str(process_time)
+        print(f"Procesando la peticion {path} en: {process_time} segundos")
+    
     return response
