@@ -19,7 +19,7 @@ RECOMMENDS = """
         acceder a las herramientas de desarrollo del navegador (generalmente con F12), y dentro
         de 'Network' seleccionar la petición realizada y revisar las cabeceras de la respuesta 
         (Response Headers).
-    - Accede a http://localhost:8300/public/avoid para ver como saltear un middleware
+    - Accede a http://localhost:8300/public/avoid para ver como saltear un middleware.
     
 """
 
