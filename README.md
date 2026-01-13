@@ -19,3 +19,4 @@
 3. Instalar en el entorno virtual los requerimientos
 
 ``` pip install -r requeriments.txt ```
+# -----------------------------------------------
