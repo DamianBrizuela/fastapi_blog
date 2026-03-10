@@ -10,11 +10,11 @@
 
 1. Creamos un entorno virtual para correr los ejemplos.
 
-``` python -m venv .fast_api_env ```
+``` python -m venv venv ```
 
 2. Luego accedemos al entorno virtual
 
-``` source .fast_api_env/bin/activate ```
+``` source venv/bin/activate ```
 
 3. Instalar en el entorno virtual los requerimientos
 
