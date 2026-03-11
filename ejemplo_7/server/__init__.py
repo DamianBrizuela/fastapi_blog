@@ -4,3 +4,7 @@
     Date:       10/03/2026
     Comments:   Basic example using router
 """
+
+from .core import run_server
+
+__all__ = [ "run_server"]
