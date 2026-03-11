@@ -5,6 +5,6 @@
     Comments:   Basic example using router
 """
 
-from .core import run_server
+from .core import ServerCore
 
-__all__ = [ "run_server"]
+__all__ = [ "ServerCore"]

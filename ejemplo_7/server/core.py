@@ -16,20 +16,26 @@ console_handler = logging.StreamHandler()
 console_handler.setFormatter(logging.Formatter('%(name)s - %(message)s'))
 logger.addHandler(console_handler)
 
-HOST = "localhost"
-PORT = 8300
-RECOMMENDS = """
-    - Accede a http://localhost:8300/public/ para probar el endpoint
-    - Revisa el ejemplo 5 antes!!.
-    - Para verificar si se agregan cabeceras en la respuesta, una forma simple de verificarlo es 
-        acceder a las herramientas de desarrollo del navegador (generalmente con F12), y dentro
-        de 'Network' seleccionar la petición realizada y revisar las cabeceras de la respuesta 
-        (Response Headers).
-    - Accede a http://localhost:8300/public/avoid para ver como saltear un middleware.
-    
+""" Emojis
+🟨​🟩​🟦​🟥​🟧​⬜​🔴​🟠​🟡​🟢​🔵​🟣​🟤​⚫​⚪
 """
 
-app=  FastAPI(title= "Server Core")
+app=  FastAPI(title= "FastAPI Core")
 
-def run_server():
-    uvicorn.run(f"{__name__}:app", host=HOST, port=PORT, reload=True)
+class ServerCore:
+
+    def __init__(self, host, port):
+        self.host= host
+        self.port= port
+        self.running= False
+        logger.debug(f"🟧 Set server at {host}:{port}")
+
+    def run(self):
+        uvicorn.run(
+            f"{__name__}:app", 
+            host= self.host, 
+            port= self.port,
+            reload=True
+        )
+        self.running = True
+        logger.debug(f"🟩 Server Running")

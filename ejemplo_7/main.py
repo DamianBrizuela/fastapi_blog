@@ -5,7 +5,14 @@
     Comments:   Basic example using router
 """
 
-from server import run_server
+from server import ServerCore
+import logging
+logger = logging.getLogger("Main")
+logger.setLevel(logging.INFO)
+
+console_handler = logging.StreamHandler()
+console_handler.setFormatter(logging.Formatter('%(name)s - %(message)s'))
+logger.addHandler(console_handler)
 
 HOST = "localhost"
 PORT = 8300
@@ -19,15 +26,9 @@ RECOMMENDS = """
     
 """
 
-
-def init_server():
-    
-    run_server()
-    print("example 7 -> externalization \n")
-    print(f"Modo de uso: {RECOMMENDS} \n")
-
-    
-
 if __name__ == "__main__":
-    init_server()
-    # accede a http://localhost:8300/docs para probar el endpoint
+    logger.info("example 7 -> externalization \n")
+    logger.debug(f"Modo de uso: {RECOMMENDS} \n")
+    
+    server = ServerCore(HOST, PORT)
+    server.run()
